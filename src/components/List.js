@@ -1,13 +1,14 @@
 import React from "react";
 import ListItem from "./ListItem";
+import "./List.css"
 
-const beers = ["lauwarmes Dortmunder Union", "Päffgen", "Andechser Hell"];
 
-export default function List(){
+export default function List(props){
     return (
-        <ul>
-            {beers.map((beer) => <ListItem key={beer} itemName={beer} />
-            )}
+        <ul className="List">
+            {props.items.map((item) => {
+             return <ListItem key={item} itemName={item}/>
+            })}
         </ul>
     )
 }
